@@ -1,0 +1,10 @@
+type User {
+    uid: ID,
+    username: String
+
+}
+
+type Course {
+    uid: ID,
+    name: String
+}
