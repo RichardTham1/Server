@@ -1,10 +1,17 @@
 type User {
     uid: ID,
-    username: String
-
+    username: String,
+    courses: [Course]
 }
 
 type Course {
-    uid: ID,
-    name: String
+    name: String,
+    passingGrade: Int,
+    marks: [Mark],
+    grade: Int
+}
+
+type Mark {
+    weight: Int,
+    mark: Int
 }
