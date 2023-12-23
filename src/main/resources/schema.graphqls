@@ -1,3 +1,7 @@
+type Query {
+    user(uid: ID): User
+}
+
 type User {
     uid: ID,
     username: String,
