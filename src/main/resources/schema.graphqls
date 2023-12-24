@@ -15,6 +15,7 @@ type Course {
 }
 
 type Mark {
+    name: String,
     weight: Int,
     mark: Int
 }
