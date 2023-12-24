@@ -1,9 +1,11 @@
 package com.example.javaserv;
 
 public class Mark {
-    private String name;
+    public String name;
     private Integer weight;
     private Integer mark;
+
+    // TODO: 2023-12-23 check how to deal with weight 
     public Mark(String name, Integer weight, Integer mark) {
         this.name = name;
         this.weight = weight;
