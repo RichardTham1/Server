@@ -1,15 +1,18 @@
 package com.example.javaserv;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Course {
-    private List<Mark> markList;
+    private List<Mark> markList = new ArrayList<>();
+
+    private String courseName;
     private Integer passingGrade;
     private Integer grade;
     private Integer accumulatedPoints;
-    public Course() {
-
+    public Course(String name) {
+        courseName = name;
     }
 
     private void evaluateAccumulatedPoints() {
