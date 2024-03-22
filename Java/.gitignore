@@ -34,5 +34,5 @@ build/
 
 
 ### Firebase ###
-src/main/java/com/example/javaserv/*.json
-src/main/java/com/example/javaserv/javaserverauth-firebase-adminsdk-u9e1s-8cb8ea977a.json
+/src/main/java/com/example/javaserv/*.json
+/src/main/java/com/example/javaserv/javaserverauth-firebase-adminsdk-u9e1s-8cb8ea977a.json
