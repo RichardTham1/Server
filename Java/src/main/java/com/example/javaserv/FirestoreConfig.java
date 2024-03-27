@@ -6,6 +6,7 @@ import com.google.firebase.FirebaseOptions;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.FirestoreOptions;
 
+import com.google.firebase.cloud.FirestoreClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,15 +17,14 @@ import java.io.IOException;
 public class FirestoreConfig {
 
     @Bean
-    public void firestore() throws IOException {
+    public Firestore firestore() throws IOException {
         FileInputStream serviceAccount =
                 new FileInputStream("./src/main/java/com/example/javaserv/javaserverauth-firebase-adminsdk-u9e1s-3ec45477e7.json");
 
-        FirebaseOptions options = new FirebaseOptions.Builder()
+        FirestoreOptions options = FirestoreOptions.newBuilder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                .setDatabaseUrl("https://javaserverauth-default-rtdb.firebaseio.com")
+                /*.setDatabaseUrl("https://javaserverauth-default-rtdb.firebaseio.com")*/
                 .build();
-
-        FirebaseApp.initializeApp(options);
+        return options.getService();
     }
 }
