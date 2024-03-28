@@ -10,10 +10,10 @@ import java.util.List;
 
 @Controller
 public class QueryResolver {
-    @QueryMapping
+    /*@QueryMapping
     public User getUser(@Argument String email) {
         return User.getUser(email);
-    }
+    }*/
 
     @QueryMapping
     public List<Course> courses(User user) {

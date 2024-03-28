@@ -9,12 +9,10 @@ public class User {
     private List<Course> courses = new ArrayList<>();
     public User(String email) {
         this.email = email;
-        userList.add(this);
     }
-    private static List<User> userList = new ArrayList<>();
 
-    public static User getUser(String email) {
-        return userList.stream().filter(user -> Objects.equals(user.email, email)).findFirst().orElse(null);
+    public String getEmail() {
+        return this.email;
     }
 
     public void addCourse(String courseName) {
