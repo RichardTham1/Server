@@ -5,14 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Course {
-    private List<Mark> markList = new ArrayList<>();
-
+    private List<Mark> markList;
     private String courseName;
     private Integer passingGrade;
-    private Integer grade;
-    private Integer accumulatedPoints;
-    public Course(String name) {
-        courseName = name;
+    private Integer grade = 0;
+    private Integer accumulatedPoints = 0;
+    public Course(String courseName, Integer passingGrade, ArrayList<Mark> marks) {
+        this.courseName = courseName;
+        this.passingGrade = passingGrade;
+        this.markList = marks;
     }
 
     private void evaluateAccumulatedPoints() {
