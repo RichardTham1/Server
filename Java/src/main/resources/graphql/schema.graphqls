@@ -1,13 +1,25 @@
+input CourseInput {
+    courseName: String,
+    passingGrade: Int,
+    marks: [MarkInput],
+    grade: Int,
+    accumulatedPoints: Int
+}
+
+input MarkInput {
+    name: String,
+    weight: Int,
+    mark: Int
+}
+
 type Mutation {
     createUser(email: String): User
-    addCourse(email: String, courseName: String): User
+    addCourse(email: String, course: CourseInput): User
 }
 
 type Query {
     getUser(email: String): User
 }
-
-
 
 type User {
     email: String,
