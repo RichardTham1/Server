@@ -8,6 +8,11 @@ public class User {
     private final String email;
     private long lastActivity;
     private final List<Course> courses = new ArrayList<>();
+
+    public User(String email, long lastActivity) {
+        this.email = email;
+        this.lastActivity = System.currentTimeMillis();
+    }
     public User(String email) {
         this.email = email;
         this.lastActivity = System.currentTimeMillis();
