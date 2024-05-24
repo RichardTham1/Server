@@ -1,0 +1,14 @@
+mutation {
+    addCourse(email: "ah@gmail.com", course: {
+        courseName: "Math",
+        passingGrade: 60,
+        marks: [
+            {name: "Quiz", weight: 30, mark: 90},
+            {name: "Final Exam", weight: 70}
+        ],
+        grade: 0,
+        accumulatedPoints: 0
+    }) {
+        email
+    }
+}
