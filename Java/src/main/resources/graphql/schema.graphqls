@@ -14,7 +14,7 @@ input MarkInput {
 
 type Mutation {
     createUser(email: String): User
-    addCourse(email: String, course: CourseInput): User
+    addCourse(email: String, course: CourseInput): [Course]
 }
 
 type Query {
