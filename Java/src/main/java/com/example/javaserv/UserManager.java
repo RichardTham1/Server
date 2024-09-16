@@ -30,7 +30,7 @@ public class UserManager {
     public ArrayList<User> cleanUpInactiveUsers() {
         ArrayList<User> userRemoved = new ArrayList<>();
         long currentTime = System.currentTimeMillis();
-        long inactivityThreshold = Constants.THIRTY_MINUTES_IN_MILLIS;
+        long inactivityThreshold = 300000;
         for (Map.Entry<String, User> entry: userMap.entrySet()) {
             User user = entry.getValue();
             if (currentTime - user.getLastActivity() >= inactivityThreshold) {
