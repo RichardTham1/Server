@@ -1,28 +1,36 @@
 package com.example.javaserv;
 
+import org.springframework.lang.Nullable;
+
 public class Mark {
     public String name;
-    private Integer weight;
-    private Integer mark;
+    private Float weight;
+    @Nullable
+    private Float mark;
 
-    // TODO: 2023-12-23 check how to deal with weight 
-    public Mark(String name, Integer weight, Integer mark) {
+    public void setName(String name) {
         this.name = name;
-        this.weight = weight;
-        this.mark = mark;
     }
 
-    public Integer getMark() {
+    public void setWeight(Float weight) {
+        this.weight = weight;
+    }
+
+    public Mark() {}
+
+    public Float getMark() {
         return mark;
     }
 
-    public Integer getWeight() {
+    public Float getWeight() {
         return weight;
     }
 
-    public void setMark(Integer mark) {
-        if (mark > 100)
-            this.mark = 100;
+    public void setMark(Float mark) {
+        if (mark == null)
+            this.mark = null;
+        else if (mark > 100)
+            this.mark = 100f;
         else
             this.mark = mark;
     }
