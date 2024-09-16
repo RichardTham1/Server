@@ -24,8 +24,8 @@ public class SessionManager {
         if (user == null) {
             user = firestoreService.getUser(email);
             this.userManager.addUser(user);
-            this.updateActivityOfUser(user);
         }
+        this.updateActivityOfUser(user);
         return user;
     }
 
@@ -33,7 +33,7 @@ public class SessionManager {
         this.userManager.addUser(user);
     }
 
-    @Scheduled(fixedDelay = Constants.THIRTY_MINUTES_IN_MILLIS)
+    @Scheduled(fixedRate = 300000)
     private void updateDbForRemovedUser() {
         ArrayList<User> removedUser = this.userManager.cleanUpInactiveUsers();
         for (User user: removedUser) {
