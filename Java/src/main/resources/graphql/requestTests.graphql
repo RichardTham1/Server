@@ -1,12 +1,17 @@
 mutation {
-    addCourse(email: "tham-richard@hotmail.com", course: {
-        courseName: "Math",
+    modifyCourse(email: "tham-richard@hotmail.com", courseName: "French" , course: {
+        courseName: "French",
         passingGrade: 60,
         marks: [
             {name: "Quiz", weight: 30, mark: 90},
             {name: "Final Exam", weight: 70}
         ],
     }) {
-        courseName
+        courseName,
+        marks {
+            name,
+            weight,
+            mark
+        }
     }
 }
