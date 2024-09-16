@@ -2,19 +2,20 @@ input CourseInput {
     courseName: String,
     passingGrade: Int,
     marks: [MarkInput],
-    grade: Int,
-    accumulatedPoints: Int
+    grade: Float,
+    accumulatedPoints: Float
 }
 
 input MarkInput {
     name: String,
     weight: Int,
-    mark: Int
+    mark: Float
 }
 
 type Mutation {
     createUser(email: String): User
     addCourse(email: String, course: CourseInput): [Course]
+    modifyCourse(email: String, courseModified: CourseInput, courseName: String): [Course]
 }
 
 type Query {
@@ -30,12 +31,13 @@ type Course {
     courseName: String,
     passingGrade: Int,
     marks: [Mark],
-    grade: Int,
-    accumulatedPoints: Int
+    grade: Float,
+    accumulatedPoints: Float,
+    pointsLeft: Float
 }
 
 type Mark {
     name: String,
     weight: Int,
-    mark: Int
+    mark: Float
 }
