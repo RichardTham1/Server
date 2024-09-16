@@ -31,8 +31,17 @@ public class UserService {
 
     public void addCourseToUser(String email, Course course) throws ExecutionException, InterruptedException {
         User user = sessionManager.getUser(email);
+        processCourse(course);
         user.addCourse(course);
     }
 
+    public void modifyCourse(String email, String courseName, Course course) throws ExecutionException, InterruptedException {
+        User user = sessionManager.getUser(email);
+        processCourse(course);
+        user.modifyCourse(courseName, course);
+    }
 
+    public void processCourse(Course course) {
+        course.evaluate();
+    }
 }
